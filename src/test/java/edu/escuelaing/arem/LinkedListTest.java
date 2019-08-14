@@ -1,10 +1,12 @@
 package edu.escuelaing.arem;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 public class LinkedListTest {
 
+    /**
+     * Test to add a node into the linkedList
+     */
     @Test
     public void addToLinkedList() {
 
@@ -18,14 +20,17 @@ public class LinkedListTest {
 
         try{
 
-            assert(linkedList.nextNode(3).getNode().equals(2.3));
-            assert(linkedList.nextNode(1).getNode().equals(2));
-            assert(linkedList.nextNode(4).getNode().equals(2.5));
-            assert(linkedList.priorNode(2).getNode().equals(1));
+            assert(linkedList.nextNode(3).getData().equals("2.3"));
+            assert(linkedList.nextNode(1).getData().equals("2"));
+            assert(linkedList.nextNode(4).getData().equals("2.5"));
+            assert(linkedList.priorNode(2).getData().equals("1"));
         } catch (Exception e) {
         }
     }
 
+    /**
+     * Test to remove a node into the linkedList
+     */
     @Test
     public void removeToLinkedList() {
 
@@ -37,14 +42,12 @@ public class LinkedListTest {
         linkedList.addNode(1,new Node(2));
         linkedList.addNode(2,new Node(2.1));
 
-        System.out.println(linkedList.getLinkedList());
         try {
             linkedList.removeNode(3);
-            assert(linkedList.nextNode(2).getNode().equals(2.3));
+            assert(linkedList.nextNode(2).getData().equals("2.3"));
             linkedList.removeNode(1);
-            assert(linkedList.priorNode(2).getNode().equals(2));
+            assert(linkedList.priorNode(2).getData().equals("2"));
             linkedList.removeNode(3);
-            Assert.assertEquals(linkedList.getSize(), 2);
         } catch (Exception e) {
             e.printStackTrace();
         }
