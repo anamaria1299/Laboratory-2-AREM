@@ -10,13 +10,7 @@ public class LinkedListTest {
     @Test
     public void addToLinkedList() {
 
-        LinkedList linkedList = new LinkedList();
-
-        linkedList.addNode(1, new Node(1));
-        linkedList.addNode(1, new Node(2.5));
-        linkedList.addNode(1,new Node(2.3));
-        linkedList.addNode(1,new Node(2));
-        linkedList.addNode(2,new Node(2.1));
+        LinkedList linkedList = fillLinkedList();
 
         try{
 
@@ -34,13 +28,7 @@ public class LinkedListTest {
     @Test
     public void removeToLinkedList() {
 
-        LinkedList linkedList = new LinkedList();
-
-        linkedList.addNode(1, new Node(1));
-        linkedList.addNode(1, new Node(2.5));
-        linkedList.addNode(1,new Node(2.3));
-        linkedList.addNode(1,new Node(2));
-        linkedList.addNode(2,new Node(2.1));
+        LinkedList linkedList = fillLinkedList();
 
         try {
             linkedList.removeNode(3);
@@ -51,5 +39,21 @@ public class LinkedListTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Fill a linked list to start the test
+     * @return LinkedList with some nodes
+     */
+    private LinkedList fillLinkedList() {
+
+        LinkedList linkedList = new LinkedList();
+
+        linkedList.addNode(1, new Node(1));
+        linkedList.addNode(1, new Node(2.5));
+        linkedList.addNode(1, new Node(2.3));
+        linkedList.addNode(1, new Node(2));
+        linkedList.addNode(2, new Node(2.1));
+        return linkedList;
     }
 }

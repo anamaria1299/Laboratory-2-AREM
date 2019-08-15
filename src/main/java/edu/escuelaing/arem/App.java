@@ -1,5 +1,6 @@
 package edu.escuelaing.arem;
 
+import java.io.File;
 import java.util.Scanner;
 
 /**
@@ -8,24 +9,36 @@ import java.util.Scanner;
  */
 public class App {
 
+    /**
+     * Execute the application and read from a file
+     * @param args
+     * @throws Exception
+     */
     public static void main( String[] args ) throws Exception {
 
-        LinkedList linkedList = new LinkedList();
+        Scanner reader = new Scanner(new File("src/main/java/edu/escuelaing/arem/resources/testCases.txt"));
 
-        Scanner reader = new Scanner(System.in);
-
-        System.out.println("Enter the size of the list:");
         int n= Integer.parseInt(reader.next());
-        System.out.printf("Enter the %d numbers:\n", n);
-        while (n!=0) {
-            linkedList.addNode(1, new Node(reader.next()));
-            n--;
-        }
+        int cases = 1;
 
-        double mean = calculateMean(linkedList);
-        double sDeviation = calculateStandardDeviation(linkedList, mean);
-        System.out.printf("Mean: %.2f \n", mean);
-        System.out.printf("Standard deviation: %.2f \n", sDeviation);
+        while (n != 0) {
+
+            LinkedList linkedList = new LinkedList();
+
+            while (n!=0) {
+                linkedList.addNode(1, new Node(reader.next()));
+                n--;
+            }
+
+            double mean = calculateMean(linkedList);
+            double sDeviation = calculateStandardDeviation(linkedList, mean);
+            System.out.printf("Case #%d %n", cases);
+            System.out.printf("Mean: %.2f \n", mean);
+            System.out.printf("Standard deviation: %.2f \n", sDeviation);
+            System.out.println("");
+            n= Integer.parseInt(reader.next());
+            cases++;
+        }
     }
 
     /**
