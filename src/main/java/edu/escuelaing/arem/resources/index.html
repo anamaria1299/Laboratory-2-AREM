@@ -4,7 +4,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         function doRequest() {
-            axios.post('http://localhost:4567/operation', {
+            axios.post('https://mean-deviation.herokuapp.com/operation', {
                     value: toList()
                 }).then(function f (res){
                 document.getElementById("result").innerHTML = "The mean is: "+ res.data.mean+"<br>"+
