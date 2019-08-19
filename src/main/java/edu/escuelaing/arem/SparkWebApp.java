@@ -13,9 +13,9 @@ public class SparkWebApp {
 
     public static void main(String[] args) {
 
+        port(getPort());
         post("operation", (req, res) -> {
 
-            port(getPort());
             JsonObject jsonObject = new JsonParser().parse(req.body()).getAsJsonObject();
             res.type("application/json");
             return Service.getResult(jsonObject.get("value").getAsJsonArray());
