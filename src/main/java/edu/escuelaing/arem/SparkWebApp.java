@@ -15,6 +15,7 @@ public class SparkWebApp {
 
         post("operation", (req, res) -> {
 
+            port(getPort());
             JsonObject jsonObject = new JsonParser().parse(req.body()).getAsJsonObject();
             res.type("application/json");
             return Service.getResult(jsonObject.get("value").getAsJsonArray());
@@ -25,5 +26,12 @@ public class SparkWebApp {
             String page = FileUtils.readFileToString(new File("src/main/java/edu/escuelaing/arem/resources/index.html"), StandardCharsets.UTF_8);
             return page;
         });
+    }
+
+    static int getPort() {
+        if (System.getenv("PORT") != null) {
+            return Integer.parseInt(System.getenv("PORT"));
+        }
+        return 4567;
     }
 }
