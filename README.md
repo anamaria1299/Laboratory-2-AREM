@@ -1,4 +1,7 @@
-# Laboratory #1 
+# URL Web App
+https://mean-deviation.herokuapp.com/operation
+
+# Laboratory #2 
 
 In this laboratory, a generic LinkedList was implemented and an application that calculates the mean and standard deviation of a set of n real numbers, this program read that set of real numbers from a file that is located in [file](https://github.com/anamaria1299/Laboratorio-1-AREM/blob/master/src/main/java/edu/escuelaing/arem/resources/testCases.txt), the structure of that file is the following:
 
