@@ -18,11 +18,11 @@ It is necessary to have installed java 1.8 and Apache Maven 3.6.0 on the compute
 
 The class diagram is the following: 
 
- ![](https://github.com/anamaria1299/Laboratorio-1-AREM/blob/master/src/site/resources/Class_Diagram.PNG)
+ ![](https://github.com/anamaria1299/Laboratory-2-AREM/blob/master/src/site/resources/Class_Diagram.PNG)
 
 In this diagram it is possible to visualize the classes; in this case Node, LinkedList and App. To add and remove to the LinkedList it is possible to do it by index, here is an example of how is the functionality:
 
- ![](https://github.com/anamaria1299/Laboratorio-1-AREM/blob/master/src/site/resources/LinkedListArchitecture.png)
+ ![](https://github.com/anamaria1299/Laboratory-2-AREM/blob/master/src/site/resources/LinkedListArchitecture.png)
 
 However, it is possible to see how it works in the javadoc.
 
@@ -40,7 +40,7 @@ Running:
 ```
 $ java -cp target/LinkedListApp-1.0-SNAPSHOT.jar edu.escuelaing.arem.App
 ```
-![](https://github.com/anamaria1299/Laboratorio-1-AREM/blob/master/src/site/resources/runningApp.PNG)
+![](https://github.com/anamaria1299/Laboratory-2-AREM/blob/master/src/site/resources/runningApp.PNG)
 
 Generating javadoc:
 ```
@@ -60,4 +60,4 @@ Then, when you finish to run the commands, you can visualize the documentation i
 
 # License
 
-This project is under the Apache license - see [LICENSE](https://github.com/anamaria1299/Laboratorio-1-AREM/blob/master/LICENSE.txt) for more details.
+This project is under the Apache license - see [LICENSE](https://github.com/anamaria1299/Laboratory-2-AREM/blob/master/LICENSE.txt) for more details.
