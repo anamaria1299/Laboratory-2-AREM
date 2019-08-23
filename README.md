@@ -1,14 +1,8 @@
-# URL Web App
-https://mean-deviation.herokuapp.com/operation
-
 # Laboratory #2 
 
-In this laboratory, a generic LinkedList was implemented and an application that calculates the mean and standard deviation of a set of n real numbers, this program read that set of real numbers from a file that is located in [file](https://github.com/anamaria1299/Laboratorio-1-AREM/blob/master/src/main/java/edu/escuelaing/arem/resources/testCases.txt), the structure of that file is the following:
+In this second laboratory, the objective was to deploy an application based on the first laboratory [this](https://github.com/anamaria1299/Laboratorio-1-AREM) where you can find the documentation of its architecture, how to run the application and, an explication of the class diagram and functionalities.
 
-  * The first line is the number of elements for the set of real numbers
-  * Then comes n lines each one with a real number
-  
-It is necessary to remember that in the file can come one or more cases, for that reason if the number of elements is 0 you must end reading.
+On the other hand, you can find in this laboratory a model of architecture but in an abstraction level of components and how the application interacts.
 
 # Prerequisites
 
@@ -16,34 +10,41 @@ It is necessary to have installed java 1.8 and Apache Maven 3.6.0 on the compute
 
 # Architecture
 
-The class diagram is the following: 
+![](https://github.com/anamaria1299/Laboratory-2-AREM/blob/master/src/site/resources/Component_Diagram.PNG)
 
- ![](https://github.com/anamaria1299/Laboratory-2-AREM/blob/master/src/site/resources/Class_Diagram.PNG)
+The architecture approach is about a web application created with java and spark framework, besides it has a service layer where was added the logical of the application that is called when someone made a post request. The html file is called from the web application to show an agreeable interface to the user, although you can make requests from "postman" for example. 
 
-In this diagram it is possible to visualize the classes; in this case Node, LinkedList and App. To add and remove to the LinkedList it is possible to do it by index, here is an example of how is the functionality:
+This application was deployed on Heroku and the link for this application is [application](https://mean-deviation.herokuapp.com/operation)
 
- ![](https://github.com/anamaria1299/Laboratory-2-AREM/blob/master/src/site/resources/LinkedListArchitecture.png)
+If you want to make a post request to get the results is necessary to send the request body like:
 
-However, it is possible to see how it works in the javadoc.
+```json
+{
+ "value": [1,2,3,5,2.3]
+}
+```
+
+where the value is a list of numbers.
+
 
 # Running the application
 
 Compiling:
-```
+```console
 $ mvn clean compile
 ```
 Packing:
-```
+```console
 $ mvn package
 ```
 Running:
-```
+```console
 $ java -cp target/LinkedListApp-1.0-SNAPSHOT.jar edu.escuelaing.arem.App
 ```
 ![](https://github.com/anamaria1299/Laboratory-2-AREM/blob/master/src/site/resources/runningApp.PNG)
 
 Generating javadoc:
-```
+```console
 $ mvn javadoc:javadoc
 $ mvn javadoc:jar
 $ mvn javadoc:aggregate
